@@ -75,10 +75,11 @@ namespace GameOfLife
         private static bool Navigation()
         {
             DisplayMessage("\n \nChoose The Action \n1 | Continue \n2 | Exit \n \n");
-            string userInput = Console.ReadLine();
             
             while (true)
             {
+                string userInput = Console.ReadLine();
+
                 if (userInput.Equals("1"))
                 {
                     Console.Clear();
@@ -86,6 +87,8 @@ namespace GameOfLife
                 } else if (userInput.Equals("2")) {
                     Console.Clear();
                     return false;
+                } else {
+                    DisplayMessage("\n \nInvalid Action. Please try again: ");
                 }
             }
         }
@@ -106,7 +109,7 @@ namespace GameOfLife
             int genCount = 0;
             
             int[, ] gameMatrix = {
-                { 1, 0, 0, 0 },
+                { 0, 0, 0, 0 },
                 { 0, 0, 0, 1 },
                 { 0, 1, 1, 0 },
                 { 0, 0, 0, 1 }
